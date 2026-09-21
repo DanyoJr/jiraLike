@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="buttonBackground">#1F2937</color>
+    <color name="buttonPrimary">#0F172A</color>
+    <color name="buttonText">#FFFFFF</color>
+    <color name="colorAccent">#2C3E50</color>
+    <color name="colorPrimary">#2C3E50</color>
+    <color name="colorPrimaryDark">#1A252F</color>
+    <color name="columnBackground">#EBEBEB</color>
+    <color name="drawerBackground">#2C3E50</color>
+    <color name="drawerItemText">#FFFFFF</color>
+    <color name="textColorPrimary">#333333</color>
+    <color name="textColorSecondary">#666666</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <string name="admin_a_fazer">A fazer</string>
+    <string name="admin_administrativo">Administrativo</string>
+    <string name="admin_ativado">ativado</string>
+    <string name="admin_click_to_upload">Click to upload\nan image</string>
+    <string name="admin_comentario">Comentário no grupo</string>
+    <string name="admin_concluido">Concluído</string>
+    <string name="admin_configuracoes">Configurações</string>
+    <string name="admin_criar_grupo">Criar novo grupo</string>
+    <string name="admin_desativado">Desativado</string>
+    <string name="admin_em_andamento">Em andamento</string>
+    <string name="admin_email">Email</string>
+    <string name="admin_grupos">Grupos</string>
+    <string name="admin_membros">Membros do sistema</string>
+    <string name="admin_mencoes">Menções em comentários</string>
+    <string name="admin_meu_perfil">Meu perfil</string>
+    <string name="admin_nome">Nome</string>
+    <string name="admin_notificacoes">Notificações</string>
+    <string name="admin_nova_senha">Nova senha</string>
+    <string name="admin_nova_tarefa">Nova tarefa atribuída</string>
+    <string name="admin_salvar">Salvar</string>
+    <string name="admin_senha_antiga">Senha antiga</string>
+    <string name="admin_seu_email">seu@email.com</string>
+    <string name="admin_seu_nome">Seu Nome</string>
+    <string name="admin_sua_senha">sua senha...</string>
+    <string name="app_name">JiraGest</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="open_drawer">Open Drawer</string>
+    <style name="Theme.JiraGest" parent="Theme.Material3.Light.NoActionBar">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/windowBackground</item>
+        
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorAccent</item>
+        <item name="colorOnSecondary">@color/windowBackground</item>
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        
+        <item name="android:windowBackground">@color/backgroundColor</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+    </style>
+</resources>

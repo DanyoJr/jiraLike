@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_dashboard"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/nav_groups"
+        android:title="Meus Grupos" />
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Configurações" />
+    <item
+        android:id="@+id/nav_admin"
+        android:title="Área adm." />
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Sair" />
+</menu>

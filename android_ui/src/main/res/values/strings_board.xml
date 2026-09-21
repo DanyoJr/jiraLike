@@ -1,0 +1,5 @@
+<resources>
+    <string name="admin_a_fazer">A fazer</string>
+    <string name="admin_em_andamento">Em andamento</string>
+    <string name="admin_concluido">Concluído</string>
+</resources>

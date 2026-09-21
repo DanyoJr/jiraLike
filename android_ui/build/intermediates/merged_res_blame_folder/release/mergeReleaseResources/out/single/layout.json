@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/fragment_groups.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/fragment_groups.xml"
+    },
+    {
+        "merged": "/Users/yoneshige/.gradle/daemon/9.0.0/com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/activity_login.xml",
+        "source": "/Users/yoneshige/.gradle/daemon/9.0.0/com.jiralike.android.android_ui-main-35:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/activity_forgot_password.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/activity_forgot_password.xml"
+    },
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/activity_main_drawer.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/activity_main_drawer.xml"
+    },
+    {
+        "merged": "/Users/yoneshige/.gradle/daemon/9.0.0/com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/activity_board.xml",
+        "source": "/Users/yoneshige/.gradle/daemon/9.0.0/com.jiralike.android.android_ui-main-35:/layout/activity_board.xml"
+    },
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/activity_reset_password.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/activity_reset_password.xml"
+    },
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/nav_header.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/nav_header.xml"
+    },
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/fragment_admin.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/fragment_admin.xml"
+    },
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/dialog_task_detail.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/dialog_task_detail.xml"
+    },
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/item_issue.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/item_issue.xml"
+    },
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/activity_login.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/yoneshige/.gradle/daemon/9.0.0/com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/item_issue.xml",
+        "source": "/Users/yoneshige/.gradle/daemon/9.0.0/com.jiralike.android.android_ui-main-35:/layout/item_issue.xml"
+    },
+    {
+        "merged": "/Users/yoneshige/.gradle/daemon/9.0.0/com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/item_project.xml",
+        "source": "/Users/yoneshige/.gradle/daemon/9.0.0/com.jiralike.android.android_ui-main-35:/layout/item_project.xml"
+    },
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/fragment_dashboard.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/fragment_settings.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "/Users/yoneshige/.gradle/daemon/9.0.0/com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/activity_dashboard.xml",
+        "source": "/Users/yoneshige/.gradle/daemon/9.0.0/com.jiralike.android.android_ui-main-35:/layout/activity_dashboard.xml"
+    },
+    {
+        "merged": "com.jiralike.android.android_ui-mergeReleaseResources-33:/layout/activity_board.xml",
+        "source": "com.jiralike.android.android_ui-main-35:/layout/activity_board.xml"
+    }
+]

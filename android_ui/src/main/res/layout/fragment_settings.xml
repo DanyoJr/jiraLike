@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/admin_configuracoes"
+            android:textColor="@color/textColorPrimary"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Meu perfil -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#E5E5E5"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/admin_meu_perfil"
+                    android:textColor="@color/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Avatar Upload Area -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/avatarUploadCard"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center_horizontal"
+                        app:cardBackgroundColor="@color/windowBackground"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#A0A0A0"
+                        android:layout_marginBottom="24dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/admin_click_to_upload"
+                            android:textColor="@color/textColorSecondary"
+                            android:textSize="12sp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Form Area -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/admin_nome"
+                                android:textSize="11sp"
+                                android:textColor="@color/textColorSecondary"/>
+                            <EditText
+                                android:id="@+id/profileNameInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_input"
+                                android:textSize="14sp"
+                                android:paddingHorizontal="12dp"
+                                android:layout_marginBottom="16dp"
+                                android:hint="@string/admin_seu_nome"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/admin_email"
+                                android:textSize="11sp"
+                                android:textColor="@color/textColorSecondary"/>
+                            <EditText
+                                android:id="@+id/profileEmailInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_input"
+                                android:textSize="14sp"
+                                android:paddingHorizontal="12dp"
+                                android:hint="@string/admin_seu_email"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/admin_senha_antiga"
+                                android:textSize="11sp"
+                                android:textColor="@color/textColorSecondary"/>
+                            <EditText
+                                android:id="@+id/oldPasswordInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_input"
+                                android:inputType="textPassword"
+                                android:textSize="14sp"
+                                android:paddingHorizontal="12dp"
+                                android:layout_marginBottom="16dp"
+                                android:hint="@string/admin_sua_senha"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/admin_nova_senha"
+                                android:textSize="11sp"
+                                android:textColor="@color/textColorSecondary"/>
+                            <EditText
+                                android:id="@+id/newPasswordInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:background="@drawable/bg_input"
+                                android:inputType="textPassword"
+                                android:textSize="14sp"
+                                android:paddingHorizontal="12dp"
+                                android:hint="@string/admin_nova_senha"/>
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/saveProfileButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:text="@string/admin_salvar"
+                            android:textColor="@color/windowBackground"
+                            app:backgroundTint="#2C2C2C"
+                            app:cornerRadius="4dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Notificações -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#E5E5E5"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/admin_notificacoes"
+                    android:textColor="@color/textColorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/admin_nova_tarefa"
+                            android:textSize="12sp"
+                            android:textColor="@color/textColorPrimary"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/notifyTaskButton"
+                            android:layout_width="100dp"
+                            android:layout_height="32dp"
+                            android:text="@string/admin_ativado"
+                            android:textColor="@color/windowBackground"
+                            app:backgroundTint="#0022AA"
+                            app:cornerRadius="4dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:padding="0dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/admin_comentario"
+                            android:textSize="12sp"
+                            android:textColor="@color/textColorPrimary"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/notifyCommentButton"
+                            android:layout_width="100dp"
+                            android:layout_height="32dp"
+                            android:text="@string/admin_ativado"
+                            android:textColor="@color/windowBackground"
+                            app:backgroundTint="#0022AA"
+                            app:cornerRadius="4dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:padding="0dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/admin_mencoes"
+                            android:textSize="12sp"
+                            android:textColor="@color/textColorPrimary"/>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/notifyMentionButton"
+                            android:layout_width="100dp"
+                            android:layout_height="32dp"
+                            android:text="@string/admin_desativado"
+                            android:textColor="@color/windowBackground"
+                            app:backgroundTint="#888888"
+                            app:cornerRadius="4dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:padding="0dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

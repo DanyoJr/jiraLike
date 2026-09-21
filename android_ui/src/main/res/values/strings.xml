@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">JiraGest</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="admin_administrativo">Administrativo</string>
+    <string name="admin_grupos">Grupos</string>
+    <string name="admin_criar_grupo">Criar novo grupo</string>
+    <string name="admin_membros">Membros do sistema</string>
+
+    <string name="admin_configuracoes">Configurações</string>
+    <string name="admin_meu_perfil">Meu perfil</string>
+    <string name="admin_click_to_upload">Click to upload\nan image</string>
+    <string name="admin_nome">Nome</string>
+    <string name="admin_seu_nome">Seu Nome</string>
+    <string name="admin_email">Email</string>
+    <string name="admin_seu_email">seu@email.com</string>
+    <string name="admin_senha_antiga">Senha antiga</string>
+    <string name="admin_sua_senha">sua senha...</string>
+    <string name="admin_nova_senha">Nova senha</string>
+    <string name="admin_salvar">Salvar</string>
+    <string name="admin_notificacoes">Notificações</string>
+    <string name="admin_nova_tarefa">Nova tarefa atribuída</string>
+    <string name="admin_comentario">Comentário no grupo</string>
+    <string name="admin_mencoes">Menções em comentários</string>
+    <string name="admin_ativado">ativado</string>
+    <string name="admin_desativado">Desativado</string>
+</resources>

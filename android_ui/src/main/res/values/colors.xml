@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2C3E50</color>
+    <color name="colorPrimaryDark">#1A252F</color>
+    <color name="colorAccent">#2C3E50</color>
+
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="textColorPrimary">#333333</color>
+    <color name="textColorSecondary">#666666</color>
+    <color name="windowBackground">#FFFFFF</color>
+
+    <!-- Sidebar / Drawer -->
+    <color name="drawerBackground">#2C3E50</color>
+    <color name="drawerItemText">#FFFFFF</color>
+
+    <!-- Board columns -->
+    <color name="columnBackground">#EBEBEB</color>
+
+    <!-- Buttons -->
+    <color name="buttonBackground">#1F2937</color> <!-- Dark button from wireframe -->
+    <color name="buttonText">#FFFFFF</color>
+    <color name="buttonPrimary">#0F172A</color>
+</resources>

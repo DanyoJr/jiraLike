@@ -1,0 +1,175 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2026-09-19T15:46:25.422-03:00  INFO 39074 --- [jiralike] [           main] com.jiralike.ApplicationKt               : Starting ApplicationKt v0.0.1-SNAPSHOT using Java 25.0.2 with PID 39074 (/Users/yoneshige/Desktop/codes/kotlin_desire/build/libs/jiralike-0.0.1-SNAPSHOT.jar started by yoneshige in /Users/yoneshige/Desktop/codes/kotlin_desire)
+2026-09-19T15:46:25.425-03:00 DEBUG 39074 --- [jiralike] [           main] com.jiralike.ApplicationKt               : Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-09-19T15:46:25.425-03:00  INFO 39074 --- [jiralike] [           main] com.jiralike.ApplicationKt               : No active profile set, falling back to 1 default profile: "default"
+2026-09-19T15:46:26.020-03:00  INFO 39074 --- [jiralike] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-19T15:46:26.048-03:00  INFO 39074 --- [jiralike] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 5 JPA repository interfaces.
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (jar:nested:/Users/yoneshige/Desktop/codes/kotlin_desire/build/libs/jiralike-0.0.1-SNAPSHOT.jar/!BOOT-INF/lib/tomcat-embed-core-10.1.36.jar!/)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-09-19T15:46:26.700-03:00  INFO 39074 --- [jiralike] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5000 (http)
+2026-09-19T15:46:26.709-03:00  INFO 39074 --- [jiralike] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-19T15:46:26.709-03:00  INFO 39074 --- [jiralike] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2026-09-19T15:46:26.727-03:00  INFO 39074 --- [jiralike] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-19T15:46:26.728-03:00  INFO 39074 --- [jiralike] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1258 ms
+2026-09-19T15:46:26.849-03:00  INFO 39074 --- [jiralike] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-19T15:46:27.030-03:00  INFO 39074 --- [jiralike] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/jiralike user=SA
+2026-09-19T15:46:27.031-03:00  INFO 39074 --- [jiralike] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-19T15:46:27.044-03:00  INFO 39074 --- [jiralike] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:file:./data/jiralike (H2 2.3)
+2026-09-19T15:46:27.050-03:00  WARN 39074 --- [jiralike] [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2026-09-19T15:46:27.062-03:00  INFO 39074 --- [jiralike] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 8 migrations (execution time 00:00.007s)
+2026-09-19T15:46:27.065-03:00  INFO 39074 --- [jiralike] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": 8
+2026-09-19T15:46:27.067-03:00  INFO 39074 --- [jiralike] [           main] o.f.core.internal.command.DbMigrate      : Schema "PUBLIC" is up to date. No migration necessary.
+2026-09-19T15:46:27.116-03:00  INFO 39074 --- [jiralike] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-19T15:46:27.141-03:00  INFO 39074 --- [jiralike] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2026-09-19T15:46:27.161-03:00  INFO 39074 --- [jiralike] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-19T15:46:27.265-03:00  INFO 39074 --- [jiralike] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-19T15:46:27.285-03:00  WARN 39074 --- [jiralike] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-19T15:46:27.289-03:00  INFO 39074 --- [jiralike] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-19T15:46:27.667-03:00  INFO 39074 --- [jiralike] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-19T15:46:27.675-03:00  INFO 39074 --- [jiralike] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-19T15:46:27.933-03:00 DEBUG 39074 --- [jiralike] [           main] com.jiralike.security.JwtAuthFilter      : Filter 'jwtAuthFilter' configured for use
+2026-09-19T15:46:27.961-03:00  INFO 39074 --- [jiralike] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-19T15:46:28.108-03:00  INFO 39074 --- [jiralike] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-09-19T15:46:28.109-03:00  WARN 39074 --- [jiralike] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-19T15:46:29.793-03:00  INFO 39074 --- [jiralike] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/jiralike'
+2026-09-19T15:46:29.873-03:00  INFO 39074 --- [jiralike] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5000 (http) with context path '/'
+2026-09-19T15:46:29.901-03:00  INFO 39074 --- [jiralike] [           main] com.jiralike.ApplicationKt               : Started ApplicationKt in 5.183 seconds (process running for 5.774)
+2026-09-19T15:46:30.160-03:00  INFO 39074 --- [jiralike] [           main] com.jiralike.config.DataInitializer      : ✅ Admin atualizado: admin@jiralike.com / Admin@123
+2026-09-19T15:46:30.268-03:00  INFO 39074 --- [jiralike] [           main] com.jiralike.config.DataInitializer      : ✅ Usuário atualizado: user@jiralike.com / User@123
+2026-09-19T15:51:12.815-03:00  INFO 39074 --- [jiralike] [nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-19T15:51:12.823-03:00  INFO 39074 --- [jiralike] [nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-19T15:51:12.843-03:00  INFO 39074 --- [jiralike] [nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2026-09-19T17:30:00.118-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s717ms).
+2026-09-19T17:46:40.132-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s648ms).
+2026-09-19T18:02:10.833-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s701ms).
+2026-09-19T18:17:43.251-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m32s416ms).
+2026-09-19T18:33:14.371-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s123ms).
+2026-09-19T18:35:15.769-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m24s130ms).
+2026-09-19T18:43:07.630-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m20s231ms).
+2026-09-19T18:58:38.465-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s842ms).
+2026-09-19T19:14:08.661-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s194ms).
+2026-09-19T19:29:40.388-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s728ms).
+2026-09-19T19:45:44.095-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s406ms).
+2026-09-19T20:16:15.235-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m31s140ms).
+2026-09-19T20:31:46.750-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s514ms).
+2026-09-19T20:42:18.360-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m31s612ms).
+2026-09-19T20:53:54.411-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m36s49ms).
+2026-09-19T21:09:24.737-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s325ms).
+2026-09-19T21:24:55.728-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s992ms).
+2026-09-19T21:40:26.731-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s999ms).
+2026-09-19T21:58:25.171-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m58s443ms).
+2026-09-19T22:13:56.090-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s921ms).
+2026-09-19T22:29:27.149-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s59ms).
+2026-09-19T22:59:27.820-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m633ms).
+2026-09-19T23:15:00.235-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m32s454ms).
+2026-09-20T09:09:11.586-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46s163ms).
+2026-09-20T09:10:30.964-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47s79ms).
+2026-09-20T10:03:32.049-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s869ms).
+2026-09-20T11:03:21.836-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46s782ms).
+2026-09-20T14:24:04.928-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m28s123ms).
+2026-09-20T14:40:03.482-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m28s515ms).
+2026-09-20T14:56:01.357-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m27s852ms).
+2026-09-20T15:00:40.080-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m8s712ms).
+2026-09-20T15:02:04.404-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m24s324ms).
+2026-09-20T15:17:37.252-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m32s848ms).
+2026-09-20T15:22:26.128-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m48s876ms).
+2026-09-20T15:35:33.348-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m7s221ms).
+2026-09-20T15:36:59.237-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m25s888ms).
+2026-09-20T15:37:49.347-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50s106ms).
+2026-09-20T16:34:51.239-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=57m1s896ms).
+2026-09-20T16:56:29.679-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=21m38s440ms).
+2026-09-20T17:41:10.488-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m40s810ms).
+2026-09-20T17:49:43.542-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m33s53ms).
+2026-09-20T18:10:38.382-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20m54s841ms).
+2026-09-20T18:25:30.547-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m52s164ms).
+2026-09-20T19:24:41.948-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=59m11s401ms).
+2026-09-20T19:26:30.856-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m48s908ms).
+2026-09-20T20:13:08.781-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46m2s643ms).
+2026-09-20T20:30:34.073-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m25s293ms).
+2026-09-20T20:39:32.067-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m57s992ms).
+2026-09-20T20:40:31.056-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s987ms).
+2026-09-20T21:00:14.435-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m43s384ms).
+2026-09-20T21:04:20.147-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m5s711ms).
+2026-09-20T21:05:20.378-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m231ms).
+2026-09-20T21:22:04.022-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m43s645ms).
+2026-09-20T21:23:23.785-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m19s762ms).
+2026-09-20T21:51:10.146-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m46s362ms).
+2026-09-20T21:52:54.690-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s543ms).
+2026-09-20T22:10:53.138-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m58s449ms).
+2026-09-20T22:12:37.016-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m43s877ms).
+2026-09-20T22:29:45.224-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m8s208ms).
+2026-09-20T22:31:29.868-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s644ms).
+2026-09-20T22:49:18.018-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m48s149ms).
+2026-09-20T23:06:02.272-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m44s256ms).
+2026-09-20T23:07:21.028-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m18s755ms).
+2026-09-20T23:26:08.332-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m47s300ms).
+2026-09-20T23:30:39.969-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m31s641ms).
+2026-09-20T23:32:24.529-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s560ms).
+2026-09-20T23:50:04.958-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m40s430ms).
+2026-09-21T00:00:06.543-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m1s585ms).
+2026-09-21T00:01:51.153-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s609ms).
+2026-09-21T00:18:52.325-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m1s173ms).
+2026-09-21T00:20:36.786-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s460ms).
+2026-09-21T00:37:51.601-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m14s815ms).
+2026-09-21T01:23:04.619-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45m13s16ms).
+2026-09-21T03:03:07.354-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h40m2s737ms).
+2026-09-21T03:34:44.467-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m37s113ms).
+2026-09-21T03:36:04.220-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m19s752ms).
+2026-09-21T03:37:48.783-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s564ms).
+2026-09-21T03:55:47.171-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m58s389ms).
+2026-09-21T04:14:34.549-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m47s378ms).
+2026-09-21T04:30:28.541-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m53s992ms).
+2026-09-21T04:32:13.126-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s584ms).
+2026-09-21T04:49:15.033-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m1s908ms).
+2026-09-21T05:00:35.482-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m20s448ms).
+2026-09-21T05:02:20.160-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s679ms).
+2026-09-21T05:20:10.693-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m50s532ms).
+2026-09-21T05:36:55.882-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m45s189ms).
+2026-09-21T05:47:07.798-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m11s912ms).
+2026-09-21T06:05:21.149-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m13s352ms).
+2026-09-21T06:06:40.707-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m19s561ms).
+2026-09-21T06:24:18.512-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m37s804ms).
+2026-09-21T06:41:32.308-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m43s780ms).
+2026-09-21T06:47:36.004-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m3s698ms).
+2026-09-21T06:49:20.595-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m44s590ms).
+2026-09-21T07:12:24.415-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=22m31s332ms).
+2026-09-21T07:53:05.848-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=40m41s433ms).
+2026-09-21T07:53:51.421-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s573ms).
+2026-09-21T07:54:41.416-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49s995ms).
+2026-09-21T09:16:12.484-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h21m31s63ms).
+2026-09-21T10:07:39.488-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51m26s964ms).
+2026-09-21T10:17:18.184-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m38s741ms).
+2026-09-21T11:01:48.771-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m30s587ms).
+2026-09-21T11:19:56.393-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m7s623ms).
+2026-09-21T11:34:59.153-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m2s759ms).
+2026-09-21T11:36:14.259-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m15s107ms).
+2026-09-21T11:38:43.717-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m29s458ms).
+2026-09-21T11:45:01.657-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m17s939ms).
+2026-09-21T11:53:20.490-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m18s833ms).
+2026-09-21T11:55:21.562-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s238ms).
+2026-09-21T12:06:45.865-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m15s249ms).
+2026-09-21T12:07:50.838-03:00  WARN 39074 --- [jiralike] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m4s963ms).
+2026-09-21T12:10:50.172-03:00  INFO 39074 --- [jiralike] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-21T12:10:50.247-03:00  INFO 39074 --- [jiralike] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-09-21T12:10:50.319-03:00  INFO 39074 --- [jiralike] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-21T12:10:50.488-03:00  INFO 39074 --- [jiralike] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-21T12:10:50.520-03:00  INFO 39074 --- [jiralike] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
