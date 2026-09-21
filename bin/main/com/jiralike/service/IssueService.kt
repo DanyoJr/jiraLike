@@ -44,6 +44,7 @@ class IssueService(
         return issueRepository.save(issue).toResponse()
     }
 
+    @Transactional(readOnly = true)
     fun findAllByProject(projectId: Long, status: IssueStatus?): List<IssueResponse> {
         val project = projectService.findEntityById(projectId)
         val issues = if (status != null) {
@@ -54,6 +55,7 @@ class IssueService(
         return issues.map { it.toResponse() }
     }
 
+    @Transactional(readOnly = true)
     fun findById(id: Long): IssueDetailResponse {
         val issue = issueRepository.findById(id)
             .orElseThrow { ResourceNotFoundException("Issue not found with id: $id") }
@@ -63,6 +65,7 @@ class IssueService(
     fun findEntityById(id: Long): Issue = issueRepository.findById(id)
         .orElseThrow { ResourceNotFoundException("Issue not found with id: $id") }
 
+    @Transactional(readOnly = true)
     fun findMyIssues(email: String): List<IssueResponse> {
         val user = userService.findEntityByEmail(email)
         return issueRepository.findAllByAssignee(user).map { it.toResponse() }

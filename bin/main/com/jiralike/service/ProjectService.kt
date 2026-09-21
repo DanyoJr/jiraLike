@@ -30,22 +30,36 @@ class ProjectService(
             description = request.description,
             owner = owner
         )
-        // Ensure lazy collections are initialized properly for response
+        // Set members directly before save to avoid PersistentSet modification issues
         project.members.add(owner)
-        owner.projects.add(project)
-
-        val savedProject = projectRepository.saveAndFlush(project)
-        return savedProject.toDetailResponse()
+        
+        val savedProject = projectRepository.save(project)
+        
+        // Return manually built response to avoid LazyLoading/CME issues on immediate creation
+        return ProjectDetailResponse(
+            id = savedProject.id,
+            name = savedProject.name,
+            key = savedProject.key,
+            description = savedProject.description,
+            owner = owner.toResponse(),
+            members = listOf(owner.toResponse()),
+            isActive = savedProject.isActive,
+            createdAt = savedProject.createdAt,
+            updatedAt = savedProject.updatedAt
+        )
     }
 
+    @Transactional(readOnly = true)
     fun findAllForUser(email: String): List<ProjectSummaryResponse> {
         val user = userService.findEntityByEmail(email)
         return projectRepository.findAllByMemberOrOwner(user).map { it.toSummaryResponse() }
     }
 
+    @Transactional(readOnly = true)
     fun findAll(): List<ProjectSummaryResponse> =
         projectRepository.findAllByIsActiveTrue().map { it.toSummaryResponse() }
 
+    @Transactional(readOnly = true)
     fun findById(id: Long): ProjectDetailResponse {
         val project = projectRepository.findById(id)
             .orElseThrow { ResourceNotFoundException("Project not found with id: $id") }

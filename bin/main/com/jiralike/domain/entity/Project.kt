@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 
 @Entity
 @Table(name = "projects")
-data class Project(
+class Project(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
@@ -42,4 +42,13 @@ data class Project(
 
     @Column(nullable = false)
     var updatedAt: LocalDateTime = LocalDateTime.now()
-)
+) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+        other as Project
+        return id != 0L && id == other.id
+    }
+
+    override fun hashCode(): Int = javaClass.hashCode()
+}

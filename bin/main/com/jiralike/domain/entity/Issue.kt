@@ -8,7 +8,7 @@ import java.time.LocalDateTime
 
 @Entity
 @Table(name = "issues")
-data class Issue(
+class Issue(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,

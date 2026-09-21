@@ -6,7 +6,7 @@ import java.time.LocalDateTime
 
 @Entity
 @Table(name = "users")
-data class User(
+class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
@@ -47,4 +47,13 @@ data class User(
 
     @ManyToMany(mappedBy = "members", fetch = FetchType.LAZY)
     val projects: MutableSet<Project> = mutableSetOf()
-)
+) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+        other as User
+        return id != 0L && id == other.id
+    }
+
+    override fun hashCode(): Int = javaClass.hashCode()
+}
