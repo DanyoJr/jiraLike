@@ -1,16 +1,17 @@
-# JiraLike — Kotlin Spring Boot
+# JiraLike — Projeto Completo (Backend, Frontend e Android)
 
-Uma API REST completa para gerenciamento de projetos e tarefas estilo Jira, desenvolvida com **Kotlin** e **Spring Boot 3**.
+Um sistema completo para gerenciamento de projetos e tarefas estilo Jira, desenvolvido com **Kotlin Spring Boot** (Backend), **React + Vite** (Frontend Web) e **Kotlin + ViewBinding** (Android App).
 
 ---
 
 ## 🚀 Como executar o projeto localmente (Ponta a Ponta)
 
-O projeto é composto por um Backend (Spring Boot) e um Frontend (Vite + React). Para que o sistema funcione completamente, é necessário rodar ambas as partes.
+O projeto é composto por três partes: um Backend (Spring Boot), um Frontend Web (Vite + React) e um App Android (Kotlin). Para que o sistema funcione completamente, é necessário rodar o backend e o cliente de sua preferência.
 
 ### Pré-requisitos
-- JDK 17+ (para o Backend)
-- Node.js e npm (para o Frontend)
+- JDK 21 (para o Backend)
+- Node.js e npm (para o Frontend Web)
+- Android Studio (para o App Android)
 
 ### 1. Rodando o Backend (API)
 
@@ -23,7 +24,7 @@ Abra um terminal na raiz do projeto (`kotlin_desire`) e execute o comando abaixo
 
 A API estará rodando e disponível em: **http://localhost:5000**
 
-### 2. Rodando o Frontend (Interface Gráfica)
+### 2. Rodando o Frontend Web (Interface Gráfica)
 
 Abra um **novo terminal** na raiz do projeto e execute os comandos abaixo:
 
@@ -39,6 +40,17 @@ npm run dev
 ```
 
 A interface gráfica estará disponível no seu navegador em: **http://localhost:5173**
+
+### 3. Rodando o App Android (Interface Mobile)
+
+1. Abra o **Android Studio**.
+2. Selecione **Open an existing project** e escolha a pasta raiz do projeto (`kotlin_desire`). O Android Studio reconhecerá o módulo `:android_ui`.
+3. Aguarde o Gradle Sync finalizar.
+4. Conecte um dispositivo Android físico ou inicie um Emulador (AVD).
+5. No Android Studio, selecione o módulo `android_ui` na barra de execução (Run/Debug Configurations).
+6. Clique no botão de **Run** (Shift + F10).
+
+> **Aviso para Emuladores:** O app Android por padrão tenta acessar a API. Caso esteja rodando no emulador, a URL do backend deve ser `http://10.0.2.2:5000` em vez de `http://localhost:5000`, pois `localhost` se refere ao próprio emulador.
 
 ---
 
@@ -73,60 +85,6 @@ Acesse: **http://localhost:5000/h2-console**
 |-------|-------|-------|
 | **Admin** | `admin@jiralike.com` | `Admin@123` |
 | **Usuário** | `user@jiralike.com` | `User@123` |
-
----
-
-## 🏗️ Arquitetura
-
-```
-src/main/kotlin/com/jiralike/
-├── Application.kt                    # Entry point
-├── config/
-│   └── OpenApiConfig.kt              # Swagger/OpenAPI config
-├── controller/
-│   ├── AuthController.kt             # Login, recuperação de senha
-│   ├── UserController.kt             # CRUD de usuários (Admin)
-│   ├── ProjectController.kt          # Gestão de projetos
-│   └── IssueController.kt            # Issues e comentários
-├── domain/
-│   ├── entity/                       # Entidades JPA
-│   │   ├── User.kt
-│   │   ├── Project.kt
-│   │   ├── Issue.kt
-│   │   ├── Comment.kt
-│   │   └── PasswordResetToken.kt
-│   └── enums/                        # Enumerações
-│       ├── Role.kt                   # ADMIN, USER
-│       ├── IssueStatus.kt            # TODO, IN_PROGRESS, IN_REVIEW, DONE
-│       ├── IssueType.kt              # BUG, FEATURE, TASK, STORY, EPIC
-│       └── IssuePriority.kt          # LOWEST, LOW, MEDIUM, HIGH, HIGHEST
-├── dto/                              # Data Transfer Objects
-│   ├── AuthDtos.kt
-│   ├── UserDtos.kt
-│   ├── ProjectDtos.kt
-│   ├── IssueDtos.kt
-│   └── CommentDtos.kt
-├── exception/                        # Tratamento de erros
-│   ├── Exceptions.kt
-│   └── GlobalExceptionHandler.kt
-├── repository/                       # Repositórios JPA
-│   ├── UserRepository.kt
-│   ├── ProjectRepository.kt
-│   ├── IssueRepository.kt
-│   ├── CommentRepository.kt
-│   └── PasswordResetTokenRepository.kt
-├── security/                         # Segurança
-│   ├── JwtUtil.kt                    # Geração/validação JWT
-│   ├── JwtAuthFilter.kt              # Filtro de autenticação
-│   ├── SecurityConfig.kt             # Configuração Spring Security
-│   └── CustomUserDetailsService.kt   # UserDetailsService
-└── service/                          # Lógica de negócio
-    ├── AuthService.kt
-    ├── UserService.kt
-    ├── ProjectService.kt
-    ├── IssueService.kt
-    └── CommentService.kt
-```
 
 ---
 
@@ -188,25 +146,30 @@ TODO → IN_PROGRESS → IN_REVIEW → DONE
 
 ## 🛠️ Stack Tecnológica
 
-| Tecnologia | Versão |
-|------------|--------|
-| Kotlin | 1.9.22 |
-| Spring Boot | 3.2.3 |
-| Spring Security | 6.x |
-| JWT (jjwt) | 0.12.3 |
-| H2 Database | - |
-| Flyway | - |
-| SpringDoc OpenAPI | 2.3.0 |
-| Gradle (Kotlin DSL) | - |
+| Camada | Tecnologia | Versão/Detalhe |
+|--------|------------|--------|
+| **Backend** | Kotlin | 2.1.20 |
+| **Backend** | Spring Boot | 3.4.3 |
+| **Backend** | Spring Security & JWT | - |
+| **Backend** | H2 Database & Flyway | - |
+| **Backend** | SpringDoc OpenAPI | 2.8.5 |
+| **Frontend** | React | 19.2.8 |
+| **Frontend** | Vite | 8.2.2 |
+| **Frontend** | TypeScript | ~6.0.2 |
+| **Android** | Kotlin | 2.1.20 |
+| **Android** | Android SDK | Min 24, Target 34 |
+| **Android** | ViewBinding | - |
+| **Android** | Retrofit & Coroutines | - |
+| **Geral** | Gradle (Kotlin DSL) | - |
 
 ---
 
 ## 🧪 Testes
 
 ```bash
-# Rodar todos os testes
+# Rodar todos os testes do backend
 ./gradlew test
 
-# Relatório de testes
+# Relatório de testes do backend
 open build/reports/tests/test/index.html
 ```
