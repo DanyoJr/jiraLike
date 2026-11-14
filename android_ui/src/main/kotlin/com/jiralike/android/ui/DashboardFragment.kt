@@ -32,22 +32,64 @@ class DashboardFragment : Fragment() {
     }
     
     private fun loadDashboardData() {
-        val token = SessionManager.getToken(requireContext()) ?: return
+        val userId = SessionManager.getToken(requireContext()) ?: return
         lifecycleScope.launch {
             try {
                 val repo = FirestoreRepository()
-                // Assuming token is userEmail for now, or just we use the currently logged email
-                // Actually the token is the user ID. But we don't have a way to fetch all projects globally unless we use a global query, 
-                // but let's fetch projects for this user. Wait, the old code used just the token.
-                // Let's use getProjects using userEmail. Since we don't have userEmail saved in SessionManager, let's just get all projects for now.
-                // Actually we just get projects where user is owner. But we need email. 
-                // Let's get issues directly for the mock summary. We can't without project id in firestore. 
-                // I will mock the summary text for now since Dashboard needs proper queries based on logged in user.
-                binding.welcomeText.text = "Olá!"
-                binding.taskCountText.text = "Carregando..."
-                binding.taskSummaryText.text = "Firebase Conectado"
+                
+                // 1. Buscamos o usuário no banco pelo ID para pegar o nome
+                val userResult = repo.getUserById(userId)
+                if (userResult.isSuccess) {
+                    val user = userResult.getOrNull()!!
+                    binding.welcomeText.text = "Olá, ${user.name}!"
+                    
+                    // 2. Buscamos os projetos desse usuário e depois contamos as tarefas
+                    val projResult = repo.getProjects(user.email)
+                    if (projResult.isSuccess) {
+                        val projects = projResult.getOrNull()!!
+                        
+                        var totalIssues = 0
+                        var inProgressIssues = 0
+                        var todoIssues = 0
+                        val allIssues = mutableListOf<com.jiralike.android.data.model.IssueDto>()
+                        
+                        for (p in projects) {
+                            val issueResult = repo.getIssues(p.id)
+                            if (issueResult.isSuccess) {
+                                val issues = issueResult.getOrNull()!!
+                                allIssues.addAll(issues)
+                                totalIssues += issues.size
+                                todoIssues += issues.count { it.status == "TODO" }
+                                inProgressIssues += issues.count { it.status == "IN_PROGRESS" }
+                            }
+                        }
+                        
+                        binding.taskCountText.text = "$totalIssues Tarefas"
+                        binding.taskSummaryText.text = "$todoIssues novas hoje, $inProgressIssues em andamento."
+
+                        // Atualiza as listas abaixo dos números
+                        val deadlinesAdapter = com.jiralike.android.ui.board.IssueAdapter(
+                            allIssues.filter { it.dueDate != null }, 
+                            {}, {} // Empty callbacks since it's just view mode here
+                        )
+                        binding.deadlinesRecyclerView.adapter = deadlinesAdapter
+
+                        val activitiesAdapter = com.jiralike.android.ui.board.IssueAdapter(
+                            allIssues,
+                            {}, {}
+                        )
+                        binding.activitiesRecyclerView.adapter = activitiesAdapter
+                    } else {
+                        binding.taskCountText.text = "0 Tarefas"
+                        binding.taskSummaryText.text = "Nenhum projeto encontrado."
+                    }
+                } else {
+                    binding.welcomeText.text = "Olá!"
+                    binding.taskCountText.text = "0 Tarefas"
+                    binding.taskSummaryText.text = "Não foi possível carregar os dados."
+                }
             } catch (e: Exception) {
-                // ignore
+                binding.taskCountText.text = "Erro ao carregar"
             }
         }
     }

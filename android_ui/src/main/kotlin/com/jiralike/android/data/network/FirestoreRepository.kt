@@ -47,7 +47,9 @@ class FirestoreRepository {
     suspend fun getProjects(userEmail: String): Result<List<ProjectDto>> {
         return try {
             val snapshot = projectsRef.whereEqualTo("ownerEmail", userEmail).get().await()
-            val projects = snapshot.toObjects(ProjectDto::class.java)
+            val projects = snapshot.documents.mapNotNull { doc ->
+                doc.toObject(ProjectDto::class.java)?.apply { id = doc.id }
+            }
             Result.success(projects)
         } catch (e: Exception) {
             Result.failure(e)
@@ -73,7 +75,9 @@ class FirestoreRepository {
     suspend fun getIssues(projectId: String): Result<List<IssueDto>> {
         return try {
             val snapshot = issuesRef.whereEqualTo("projectId", projectId).get().await()
-            val issues = snapshot.toObjects(IssueDto::class.java)
+            val issues = snapshot.documents.mapNotNull { doc ->
+                doc.toObject(IssueDto::class.java)?.apply { id = doc.id }
+            }
             Result.success(issues)
         } catch (e: Exception) {
             Result.failure(e)
@@ -106,6 +110,20 @@ class FirestoreRepository {
                 Result.success(issue)
             } else {
                 Result.failure(Exception("Failed to load updated issue."))
+            }
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    suspend fun getUserById(userId: String): Result<UserDto> {
+        return try {
+            val doc = usersRef.document(userId).get().await()
+            val user = doc.toObject(UserDto::class.java)
+            if (user != null) {
+                Result.success(user)
+            } else {
+                Result.failure(Exception("User not found"))
             }
         } catch (e: Exception) {
             Result.failure(e)
