@@ -8,6 +8,7 @@ plugins {
     kotlin("plugin.jpa") version "2.1.20"
     id("com.android.application") version "8.7.0" apply false
     kotlin("android") version "2.1.20" apply false
+    id("com.google.gms.google-services") version "4.4.2" apply false
 }
 
 group = "com.jiralike"

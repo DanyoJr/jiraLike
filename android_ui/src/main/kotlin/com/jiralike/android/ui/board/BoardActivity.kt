@@ -12,13 +12,13 @@ import com.jiralike.android.data.local.SessionManager
 import com.jiralike.android.data.model.CreateIssueRequest
 import com.jiralike.android.data.model.IssueDto
 import com.jiralike.android.data.model.UpdateStatusRequest
-import com.jiralike.android.data.network.RetrofitClient
+import com.jiralike.android.data.network.FirestoreRepository
 import com.jiralike.android.databinding.ActivityBoardBinding
 import kotlinx.coroutines.launch
 
 class BoardActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBoardBinding
-    private var projectId: Long = -1L
+    private var projectId: String = ""
     private var projectName: String = "Project Board"
 
     private lateinit var todoAdapter: IssueAdapter
@@ -30,7 +30,7 @@ class BoardActivity : AppCompatActivity() {
         binding = ActivityBoardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        projectId = intent.getLongExtra("PROJECT_ID", -1L)
+        projectId = intent.getStringExtra("PROJECT_ID") ?: ""
         projectName = intent.getStringExtra("PROJECT_NAME") ?: "Project Board"
 
         binding.newTaskButton.setOnClickListener {
@@ -42,7 +42,7 @@ class BoardActivity : AppCompatActivity() {
     }
 
     private fun showCreateTaskDialog() {
-        if (projectId == -1L) {
+        if (projectId.isEmpty()) {
             Toast.makeText(this, "Selecione um projeto primeiro", Toast.LENGTH_SHORT).show()
             return
         }
@@ -51,16 +51,16 @@ class BoardActivity : AppCompatActivity() {
     }
 
     private fun createTask(title: String, description: String) {
-        val token = SessionManager.getToken(this) ?: return
+        val repo = FirestoreRepository()
         lifecycleScope.launch {
             try {
                 val req = CreateIssueRequest(title, description)
-                val response = RetrofitClient.api.createIssue(token, projectId, req)
-                if (response.isSuccessful) {
+                val result = repo.createIssue(projectId, req)
+                if (result.isSuccess) {
                     Toast.makeText(this@BoardActivity, "Tarefa criada", Toast.LENGTH_SHORT).show()
                     loadIssues()
                 } else {
-                    Toast.makeText(this@BoardActivity, "Erro ao criar: ${response.code()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@BoardActivity, "Erro ao criar: ${result.exceptionOrNull()?.message}", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
                 Toast.makeText(this@BoardActivity, "Erro: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
@@ -84,12 +84,13 @@ class BoardActivity : AppCompatActivity() {
     }
 
     private fun loadProjects() {
-        val token = SessionManager.getToken(this) ?: return
+        val repo = FirestoreRepository()
+        val email = "admin@jiralike.com" // mockup since email isn't globally available easily
         lifecycleScope.launch {
             try {
-                val response = RetrofitClient.api.getProjects(token)
-                if (response.isSuccessful && response.body() != null) {
-                    val projects = response.body()!!
+                val result = repo.getProjects(email)
+                if (result.isSuccess) {
+                    val projects = result.getOrNull()!!
                     if (projects.isNotEmpty()) {
                         val adapter = android.widget.ArrayAdapter(
                             this@BoardActivity,
@@ -125,14 +126,14 @@ class BoardActivity : AppCompatActivity() {
     }
 
     fun loadIssues() {
-        val token = SessionManager.getToken(this) ?: return
-        if (projectId == -1L) return
+        if (projectId.isEmpty()) return
+        val repo = FirestoreRepository()
 
         lifecycleScope.launch {
             try {
-                val response = RetrofitClient.api.getIssues(token, projectId)
-                if (response.isSuccessful && response.body() != null) {
-                    val issues = response.body()!!
+                val result = repo.getIssues(projectId)
+                if (result.isSuccess) {
+                    val issues = result.getOrNull()!!
                     val todoList = issues.filter { it.status == "TODO" }
                     val inProgressList = issues.filter { it.status == "IN_PROGRESS" || it.status == "IN_REVIEW" }
                     val doneList = issues.filter { it.status == "DONE" }
@@ -150,11 +151,11 @@ class BoardActivity : AppCompatActivity() {
     }
 
     private fun moveIssue(issue: IssueDto, targetStatus: String) {
-        val token = SessionManager.getToken(this) ?: return
+        val repo = FirestoreRepository()
         lifecycleScope.launch {
             try {
-                val response = RetrofitClient.api.updateIssueStatus(token, issue.id, UpdateStatusRequest(targetStatus))
-                if (response.isSuccessful) {
+                val result = repo.updateIssueStatus(issue.id, UpdateStatusRequest(targetStatus))
+                if (result.isSuccess) {
                     loadIssues()
                 } else {
                     Toast.makeText(this@BoardActivity, "Failed to update status", Toast.LENGTH_SHORT).show()

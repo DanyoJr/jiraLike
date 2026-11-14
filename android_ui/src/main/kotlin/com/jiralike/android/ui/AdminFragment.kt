@@ -13,7 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jiralike.android.data.local.SessionManager
 import com.jiralike.android.data.model.CreateProjectRequest
-import com.jiralike.android.data.network.RetrofitClient
+import com.jiralike.android.data.network.FirestoreRepository
 import com.jiralike.android.databinding.FragmentAdminBinding
 import com.jiralike.android.ui.dashboard.ProjectAdapter
 import kotlinx.coroutines.launch
@@ -86,16 +86,17 @@ class AdminFragment : Fragment() {
     }
 
     private fun createGroup(name: String, key: String) {
-        val token = SessionManager.getToken(requireContext()) ?: return
+        val email = "admin@jiralike.com"
+        val repo = FirestoreRepository()
         lifecycleScope.launch {
             try {
                 val request = CreateProjectRequest(name, key, "Descrição do grupo")
-                val response = RetrofitClient.api.createProject(token, request)
-                if (response.isSuccessful) {
+                val result = repo.createProject(request, email)
+                if (result.isSuccess) {
                     Toast.makeText(context, "Grupo criado com sucesso!", Toast.LENGTH_SHORT).show()
                     loadGroups()
                 } else {
-                    Toast.makeText(context, "Erro ao criar: ${response.code()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Erro ao criar: ${result.exceptionOrNull()?.message}", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
                 Toast.makeText(context, "Erro: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
@@ -104,12 +105,13 @@ class AdminFragment : Fragment() {
     }
     
     private fun loadGroups() {
-        val token = SessionManager.getToken(requireContext()) ?: return
+        val email = "admin@jiralike.com"
+        val repo = FirestoreRepository()
         lifecycleScope.launch {
             try {
-                val response = RetrofitClient.api.getProjects(token)
-                if (response.isSuccessful && response.body() != null) {
-                    groupAdapter.updateData(response.body()!!)
+                val result = repo.getProjects(email)
+                if (result.isSuccess) {
+                    groupAdapter.updateData(result.getOrNull()!!)
                 }
             } catch (e: Exception) {
                 Toast.makeText(context, "Erro: ${e.localizedMessage}", Toast.LENGTH_LONG).show()

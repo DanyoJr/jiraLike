@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.jiralike.android.data.local.SessionManager
 import com.jiralike.android.data.model.LoginRequest
-import com.jiralike.android.data.network.RetrofitClient
+import com.jiralike.android.data.network.FirestoreRepository
 import com.jiralike.android.databinding.ActivityLoginBinding
 import com.jiralike.android.ui.MainActivity
 import kotlinx.coroutines.launch
@@ -44,17 +44,19 @@ class LoginActivity : AppCompatActivity() {
 
             lifecycleScope.launch {
                 try {
-                    val response = RetrofitClient.api.login(LoginRequest(email, password))
-                    if (response.isSuccessful && response.body() != null) {
-                        val authResponse = response.body()!!
-                        val token = "${authResponse.tokenType} ${authResponse.accessToken}"
-                        SessionManager.saveToken(this@LoginActivity, token)
+                    val repo = FirestoreRepository()
+                    val result = repo.login(LoginRequest(email, password))
+                    
+                    if (result.isSuccess) {
+                        val authResponse = result.getOrNull()!!
+                        // saving ID as token
+                        SessionManager.saveToken(this@LoginActivity, authResponse.accessToken)
 
                         Toast.makeText(this@LoginActivity, "Login Successful!", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                         finish()
                     } else {
-                        Toast.makeText(this@LoginActivity, "Login failed: ${response.code()}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@LoginActivity, "Login failed: ${result.exceptionOrNull()?.message}", Toast.LENGTH_SHORT).show()
                     }
                 } catch (e: Exception) {
                     Toast.makeText(this@LoginActivity, "Error: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
@@ -84,11 +86,12 @@ class LoginActivity : AppCompatActivity() {
 
             lifecycleScope.launch {
                 try {
+                    val repo = FirestoreRepository()
                     val req = com.jiralike.android.data.model.RegisterRequest(name, email, password)
-                    val response = RetrofitClient.api.register(req)
-                    if (response.isSuccessful) {
+                    val result = repo.register(req)
+                    
+                    if (result.isSuccess) {
                         Toast.makeText(this@LoginActivity, "Conta criada! Faça login.", Toast.LENGTH_SHORT).show()
-                        // preencher o form de login
                         binding.emailInput.setText(email)
                         binding.passwordInput.setText("")
                         binding.registerNameInput.setText("")
@@ -96,7 +99,7 @@ class LoginActivity : AppCompatActivity() {
                         binding.registerPasswordInput.setText("")
                         binding.registerConfirmPasswordInput.setText("")
                     } else {
-                        Toast.makeText(this@LoginActivity, "Erro ao criar conta: ${response.code()}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@LoginActivity, "Erro ao criar conta: ${result.exceptionOrNull()?.message}", Toast.LENGTH_SHORT).show()
                     }
                 } catch (e: Exception) {
                     Toast.makeText(this@LoginActivity, "Erro: ${e.localizedMessage}", Toast.LENGTH_LONG).show()

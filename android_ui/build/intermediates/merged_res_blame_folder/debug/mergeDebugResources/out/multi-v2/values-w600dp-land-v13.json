@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.jiralike.android.android_ui-mergeDebugResources-32:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+            "outputFile": "com.jiralike.android.android_ui-mergeDebugResources-36:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/yoneshige/.gradle/caches/9.0.0/transforms/178d10ace81d04bbf3fb3009d51b91a4/transformed/material-1.11.0/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+                    "source": "/Users/yoneshige/.gradle/caches/9.0.0/transforms/3d95d6e748b727aec9a6e1e4a9860b93/transformed/material-1.11.0/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

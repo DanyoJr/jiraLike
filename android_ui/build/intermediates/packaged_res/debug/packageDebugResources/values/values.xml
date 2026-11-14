@@ -39,7 +39,13 @@
     <string name="admin_sua_senha">sua senha...</string>
     <string name="app_name">JiraGest</string>
     <string name="close_drawer">Close Drawer</string>
+    <string name="gcm_defaultSenderId" translatable="false">62167641194</string>
+    <string name="google_api_key" translatable="false">AIzaSyBWWuzSrXjyLOngzCwm2i3cxDsOEEaG_mE</string>
+    <string name="google_app_id" translatable="false">1:62167641194:android:cb2778758653ba2deb6e13</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBWWuzSrXjyLOngzCwm2i3cxDsOEEaG_mE</string>
+    <string name="google_storage_bucket" translatable="false">device-streaming-7d9c6830.firebasestorage.app</string>
     <string name="open_drawer">Open Drawer</string>
+    <string name="project_id" translatable="false">device-streaming-7d9c6830</string>
     <style name="Theme.JiraGest" parent="Theme.Material3.Light.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>

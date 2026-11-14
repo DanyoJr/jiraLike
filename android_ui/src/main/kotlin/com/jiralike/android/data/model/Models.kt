@@ -1,69 +1,73 @@
 package com.jiralike.android.data.model
 
+import com.google.firebase.firestore.DocumentId
+
 data class LoginRequest(
-    val email: String,
-    val password: String
+    val email: String = "",
+    val password: String = ""
 )
 
 data class RegisterRequest(
-    val name: String,
-    val email: String,
-    val password: String
+    val name: String = "",
+    val email: String = "",
+    val password: String = ""
 )
 
 data class AuthResponse(
-    val accessToken: String,
+    val accessToken: String = "", // We can use User ID here
     val tokenType: String = "Bearer",
-    val email: String,
-    val name: String,
-    val role: String
+    val email: String = "",
+    val name: String = "",
+    val role: String = "USER"
 )
 
 data class ProjectDto(
-    val id: Long,
-    val name: String,
-    val key: String?,
-    val description: String?,
-    val ownerEmail: String?
+    @DocumentId var id: String = "",
+    var name: String = "",
+    var key: String? = null,
+    var description: String? = null,
+    var ownerEmail: String? = null
 )
 
 data class CreateProjectRequest(
-    val name: String,
-    val key: String,
-    val description: String
+    val name: String = "",
+    val key: String = "",
+    val description: String = ""
 )
 
 data class IssueDto(
-    val id: Long,
-    val title: String,
-    val description: String?,
-    val status: String, // TODO, IN_PROGRESS, IN_REVIEW, DONE
-    val type: String,   // BUG, FEATURE, TASK, STORY, EPIC
-    val priority: String, // LOWEST, LOW, MEDIUM, HIGH, HIGHEST
-    val assignee: UserDto?,
-    val dueDate: String?
+    @DocumentId var id: String = "",
+    var projectId: String = "",
+    var title: String = "",
+    var description: String? = null,
+    var status: String = "TODO",
+    var type: String = "TASK",
+    var priority: String = "MEDIUM",
+    var assignee: UserDto? = null,
+    var dueDate: String? = null
 )
 
 data class CreateIssueRequest(
-    val title: String,
-    val description: String,
+    val title: String = "",
+    val description: String = "",
     val type: String = "TASK",
     val priority: String = "MEDIUM"
 )
 
 data class ProjectDetailDto(
-    val id: Long,
-    val name: String,
-    val description: String?,
-    val members: List<UserDto>
+    var id: String = "",
+    var name: String = "",
+    var description: String? = null,
+    var members: List<UserDto> = emptyList()
 )
 
 data class UpdateStatusRequest(
-    val status: String
+    val status: String = ""
 )
 
 data class UserDto(
-    val id: Long,
-    val name: String,
-    val email: String
+    @DocumentId var id: String = "",
+    var name: String = "",
+    var email: String = "",
+    var password: String = "" // In a real app we'd use Firebase Auth, but we are keeping your structure
 )
